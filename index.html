@@ -180,6 +180,204 @@
         .toast.show { transform: translate(-50%, -50%) scale(1); opacity: 1; }
         .toast.gain { color: var(--primary); border: 2px solid var(--primary-light); }
         .toast.loss { color: var(--loss-text); border: 2px solid var(--loss-bg); }
+
+        /* 宠物陪伴卡片 */
+        .pet-card {
+            background: linear-gradient(135deg, #fdf2f8, #eef2ff);
+            border: 1px solid #e9d5ff;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 12px 30px -18px rgba(59, 130, 246, 0.35);
+        }
+        .pet-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.9rem;
+        }
+        .pet-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #4c1d95;
+            margin-bottom: 0.25rem;
+        }
+        .pet-subtitle {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #6b7280;
+        }
+        .pet-action-btn {
+            border: none;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 0.65rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 10px 20px -12px rgba(139, 92, 246, 0.8);
+        }
+        .pet-action-btn:active { transform: scale(0.97); }
+        .pet-body {
+            display: grid;
+            grid-template-columns: 104px 1fr;
+            gap: 0.95rem;
+            align-items: center;
+        }
+        .pet-avatar {
+            width: 104px;
+            height: 104px;
+            border-radius: 1.35rem;
+            overflow: hidden;
+            background: rgba(255,255,255,0.82);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.88), 0 10px 24px rgba(139, 92, 246, 0.12);
+        }
+        .pet-avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pet-name-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 0.35rem;
+        }
+        .pet-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--slate-700);
+        }
+        .pet-stage, .pet-mood {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 9999px;
+        }
+        .pet-stage {
+            color: #6d28d9;
+            background: rgba(233, 213, 255, 0.7);
+        }
+        .pet-mood {
+            color: #0f766e;
+            background: rgba(204, 251, 241, 0.95);
+        }
+        .pet-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.6rem;
+            margin: 0.85rem 0;
+        }
+        .pet-stat {
+            background: rgba(255,255,255,0.7);
+            border-radius: 1rem;
+            padding: 0.7rem 0.55rem;
+            text-align: center;
+        }
+        .pet-stat-label {
+            font-size: 0.68rem;
+            color: var(--slate-400);
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        .pet-stat-value {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--slate-700);
+        }
+        .pet-hint {
+            font-size: 0.76rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+        .pet-progress-track {
+            width: 100%;
+            height: 0.55rem;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.75);
+            overflow: hidden;
+            margin-bottom: 0.45rem;
+        }
+        .pet-progress-bar {
+            height: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        .pet-progress-text {
+            font-size: 0.72rem;
+            color: #7c3aed;
+            font-weight: 700;
+        }
+        .pet-achievements {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .pet-achievement-badge {
+            background: rgba(255,255,255,0.75);
+            color: #7c3aed;
+            font-size: 0.68rem;
+            font-weight: 700;
+            border-radius: 9999px;
+            padding: 0.28rem 0.55rem;
+        }
+        .pet-empty {
+            background: rgba(255,255,255,0.72);
+            border-radius: 1.1rem;
+            padding: 1rem;
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 0.82rem;
+        }
+        .pet-options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.75rem;
+        }
+        .pet-option {
+            border: 2px solid var(--slate-100);
+            border-radius: 1.1rem;
+            background: white;
+            padding: 0.9rem 0.7rem;
+            text-align: center;
+        }
+        .pet-option.active {
+            border-color: #a855f7;
+            box-shadow: 0 10px 20px -14px rgba(168, 85, 247, 0.9);
+        }
+        .pet-option-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 0.45rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: rgba(255,255,255,0.88);
+            box-shadow: inset 0 0 0 1px rgba(236, 228, 255, 0.9);
+        }
+        .pet-option-icon img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pet-option-name {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--slate-700);
+            margin-bottom: 0.2rem;
+        }
+        .pet-option-desc {
+            font-size: 0.72rem;
+            color: var(--slate-400);
+            line-height: 1.5;
+        }
         
         /* 图标 SVG */
         .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -232,6 +430,18 @@
             当前为【孩子模式】，只能看不能删哦。
         </div>
 
+        <!-- 宠物陪伴卡片 -->
+        <section class="pet-card">
+            <div class="pet-card-top">
+                <div>
+                    <div class="pet-title">成长伙伴</div>
+                    <div class="pet-subtitle">参考成长宝币的宠物陪伴体验，为易宝增加一个会陪伴成长、按表现变化心情的小伙伴。</div>
+                </div>
+                <button class="pet-action-btn" onclick="openPetModal()"><span id="petActionText">选择伙伴</span></button>
+            </div>
+            <div id="petCompanionCard"></div>
+        </section>
+
         <!-- 选项卡 -->
         <div class="tabs-container" id="categoryTabs"></div>
 
@@ -258,12 +468,92 @@
         </div>
     </div>
 
+
+
+    <!-- 4. 宠物陪伴弹窗 -->
+    <div id="petModal" class="modal-overlay" onclick="if(event.target===this) closeModal('petModal')">
+        <div class="modal-content" style="max-width: 360px;">
+            <div class="flex justify-between items-center mb-4">
+                <h3 style="margin:0; font-weight:800; font-size: 1.05rem; color:#6d28d9;">选择成长伙伴</h3>
+                <button onclick="closeModal('petModal')" style="background:none; border:none; color:var(--slate-400); font-size:1.5rem;">&times;</button>
+            </div>
+            <div style="font-size:0.78rem; line-height:1.6; color:var(--slate-400);">预览版先提供可切换的伙伴选择体验，确认后我可以再帮你改成“选定后不可更换”的正式规则。</div>
+            <div id="petOptionsGrid" class="pet-options-grid"></div>
+        </div>
+    </div>
+
     <div id="toast" class="toast"></div>
 
     <script>
         // --- 核心配置 (易宝专属) ---
         const CONFIG = {
-            storageKey: 'yibao_html_v2', // 升级版本号以防冲突
+            storageKey: 'yibao_html_v3', // 升级版本号以防旧版本数据结构冲突
+            petOptions: [
+                {
+                    id: 'dragon',
+                    name: '小龙',
+                    accent: '#2563eb',
+                    moodColor: '#dbeafe',
+                    desc: '勇敢守护型伙伴',
+                    previewImage: 'dragon_stage_v2_2_hatchling.png',
+                    stageImages: [
+                        'dragon_stage_v2_1_egg.png',
+                        'dragon_stage_v2_2_hatchling.png',
+                        'dragon_stage_v2_3_young.png',
+                        'dragon_stage_v2_4_growing.png',
+                        'dragon_stage_v2_5_guardian.png',
+                        'dragon_stage_v2_6_divine_beast.png'
+                    ]
+                },
+                {
+                    id: 'tiger',
+                    name: '萌虎',
+                    accent: '#ea580c',
+                    moodColor: '#ffedd5',
+                    desc: '元气满满型伙伴',
+                    previewImage: 'tiger_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'tiger_stage_dragon_ref_1_egg.png',
+                        'tiger_stage_dragon_ref_2_hatchling.png',
+                        'tiger_stage_dragon_ref_3_young.png',
+                        'tiger_stage_dragon_ref_4_growing.png',
+                        'tiger_stage_dragon_ref_5_guardian.png',
+                        'tiger_stage_dragon_ref_6_divine_beast.png'
+                    ]
+                },
+                {
+                    id: 'rabbit',
+                    name: '小兔',
+                    accent: '#db2777',
+                    moodColor: '#fce7f3',
+                    desc: '温柔贴心型伙伴',
+                    previewImage: 'rabbit_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'rabbit_stage_dragon_ref_1_egg.png',
+                        'rabbit_stage_dragon_ref_2_hatchling.png',
+                        'rabbit_stage_dragon_ref_3_young.png',
+                        'rabbit_stage_dragon_ref_4_growing_v2.png',
+                        'rabbit_stage_dragon_ref_5_guardian.png',
+                        'rabbit_stage_dragon_ref_6_divine_beast_v2.png'
+                    ]
+                },
+                {
+                    id: 'unicorn',
+                    name: '独角兽',
+                    accent: '#7c3aed',
+                    moodColor: '#ede9fe',
+                    desc: '梦幻奖励型伙伴',
+                    previewImage: 'unicorn_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'unicorn_stage_dragon_ref_1_egg.png',
+                        'unicorn_stage_dragon_ref_2_hatchling.png',
+                        'unicorn_stage_dragon_ref_3_young.png',
+                        'unicorn_stage_dragon_ref_4_growing.png',
+                        'unicorn_stage_dragon_ref_5_guardian.png',
+                        'unicorn_stage_dragon_ref_6_divine_beast.png'
+                    ]
+                }
+            ],
             categories: [
                 {
                     id: 'daily', title: '日常习惯',
@@ -324,14 +614,29 @@
         let state = {
             logs: [],
             activeTab: 'daily',
-            isAdmin: true // 默认家长模式，点击锁图标切换
+            isAdmin: true, // 默认家长模式，点击锁图标切换
+            pet: {
+                selectedId: null,
+                companionSince: null
+            }
         };
 
         // --- 初始化 ---
         function init() {
             const saved = localStorage.getItem(CONFIG.storageKey);
             if (saved) {
-                try { state.logs = JSON.parse(saved); } catch(e) {}
+                try {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed)) {
+                        state.logs = parsed;
+                    } else {
+                        state.logs = parsed.logs || [];
+                        state.pet = {
+                            selectedId: parsed.pet?.selectedId || null,
+                            companionSince: parsed.pet?.companionSince || null
+                        };
+                    }
+                } catch(e) {}
             }
             renderTabs();
             renderApp();
@@ -340,7 +645,10 @@
         }
 
         function saveData() {
-            localStorage.setItem(CONFIG.storageKey, JSON.stringify(state.logs));
+            localStorage.setItem(CONFIG.storageKey, JSON.stringify({
+                logs: state.logs,
+                pet: state.pet
+            }));
             renderApp();
         }
 
@@ -395,6 +703,175 @@
             document.getElementById('headerDate').querySelector('span').textContent = dateStr;
         }
 
+        function getTodayNet() {
+            const todayStr = new Date().toISOString().split('T')[0];
+            return state.logs
+                .filter(l => l.dateStr === todayStr)
+                .reduce((acc, l) => acc + l.points, 0);
+        }
+
+        function getPetDefinition() {
+            return CONFIG.petOptions.find(p => p.id === state.pet.selectedId) || null;
+        }
+
+        function getCompanionDays() {
+            if (!state.pet.selectedId || !state.pet.companionSince) return 0;
+            const start = new Date(state.pet.companionSince);
+            const diff = new Date() - start;
+            return Math.max(1, Math.floor(diff / (1000 * 60 * 60 * 24)) + 1);
+        }
+
+        function getPetStage(days) {
+            const stages = [
+                { min: 0, title: '萌芽期', hint: '刚刚成为易宝的新伙伴，一起开始积累好习惯。' },
+                { min: 7, title: '陪伴期', hint: '已经陪伴满一周，开始熟悉每天的成长节奏。' },
+                { min: 30, title: '成长型', hint: '坚持一个月后，伙伴会更自信，也更懂得回应表现。' },
+                { min: 180, title: '闪耀型', hint: '陪伴来到半年，已经是很可靠的成长见证者。' },
+                { min: 365, title: '守护型', hint: '坚持满一年，伙伴会进入长期守护状态。' },
+                { min: 540, title: '神兽期', hint: '长时间稳定陪伴后，伙伴会进化到最高阶段。' }
+            ];
+            let current = stages[0];
+            let index = 0;
+            stages.forEach((stage, i) => {
+                if (days >= stage.min) {
+                    current = stage;
+                    index = i;
+                }
+            });
+            const next = stages[index + 1] || null;
+            const base = current.min;
+            const percent = next ? Math.min(100, Math.max(8, ((days - base) / (next.min - base || 1)) * 100)) : 100;
+            return { ...current, index, next, percent };
+        }
+
+        function getPetMood(net) {
+            if (net >= 10) return { label: '超开心', emoji: '😄', color: '#dcfce7', text: '#15803d' };
+            if (net > 0) return { label: '开心', emoji: '🙂', color: '#ecfccb', text: '#4d7c0f' };
+            if (net === 0) return { label: '平静', emoji: '😌', color: '#e0f2fe', text: '#0369a1' };
+            if (net > -10) return { label: '委屈', emoji: '🥺', color: '#fee2e2', text: '#b91c1c' };
+            return { label: '需要抱抱', emoji: '😭', color: '#fecdd3', text: '#be123c' };
+        }
+
+        function getCurrentStreak() {
+            let streak = 0;
+            const sortedLogs = [...state.logs].sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+            const lastLoss = sortedLogs.find(l => l.type === 'loss');
+            if (!lastLoss) {
+                if (state.logs.length > 0) {
+                    const firstLog = sortedLogs[sortedLogs.length - 1];
+                    const diff = new Date() - new Date(firstLog.timestamp);
+                    streak = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
+                }
+            } else {
+                const diff = new Date() - new Date(lastLoss.timestamp);
+                streak = Math.floor(diff / (1000 * 60 * 60 * 24));
+            }
+            return streak;
+        }
+
+        function getPetAchievements(total, streak) {
+            const gainCount = state.logs.filter(l => l.type === 'gain').length;
+            const achievements = [];
+            if (total >= 30) achievements.push('积分小能手');
+            if (streak >= 7) achievements.push('坚持一周');
+            if (gainCount >= 20) achievements.push('表现超棒');
+            if (getCompanionDays() >= 30) achievements.push('陪伴满一月');
+            return achievements;
+        }
+
+        function renderPetModal() {
+            const grid = document.getElementById('petOptionsGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            CONFIG.petOptions.forEach(pet => {
+                const btn = document.createElement('button');
+                btn.className = `pet-option ${state.pet.selectedId === pet.id ? 'active' : ''}`;
+                btn.onclick = () => selectPet(pet.id);
+                btn.innerHTML = `
+                    <div class="pet-option-icon"><img src="${pet.previewImage}" alt="${pet.name}预览图"></div>
+                    <div class="pet-option-name">${pet.name}</div>
+                    <div class="pet-option-desc">${pet.desc}</div>
+                `;
+                grid.appendChild(btn);
+            });
+        }
+
+        function renderPetCard(stats = {}) {
+            const container = document.getElementById('petCompanionCard');
+            const actionText = document.getElementById('petActionText');
+            if (!container || !actionText) return;
+
+            const pet = getPetDefinition();
+            actionText.textContent = pet ? '更换伙伴' : '选择伙伴';
+
+            if (!pet) {
+                container.innerHTML = `
+                    <div class="pet-empty">
+                        还没有选择成长伙伴。可以先从小龙、萌虎、小兔或独角兽里挑一个，让它陪着易宝一起记录积分、观察每日心情和成长阶段。
+                    </div>
+                `;
+                return;
+            }
+
+            const total = stats.total ?? state.logs.reduce((acc, l) => acc + l.points, 0);
+            const streak = stats.streak ?? getCurrentStreak();
+            const days = getCompanionDays();
+            const stage = getPetStage(days);
+            const mood = getPetMood(stats.net ?? getTodayNet());
+            const achievements = getPetAchievements(total, streak);
+            const stageImage = pet.stageImages[Math.min(stage.index, pet.stageImages.length - 1)] || pet.stageImages[pet.stageImages.length - 1];
+            const nextText = stage.next ? `距离${stage.next.title}还差 ${Math.max(0, stage.next.min - days)} 天` : '已经达到最高进化阶段';
+
+            container.innerHTML = `
+                <div class="pet-body">
+                    <div class="pet-avatar"><img src="${stageImage}" alt="${pet.name}${stage.title}"></div>
+                    <div>
+                        <div class="pet-name-row">
+                            <span class="pet-name">${pet.name}</span>
+                            <span class="pet-stage">${stage.title}</span>
+                            <span class="pet-mood" style="background:${mood.color}; color:${mood.text};">${mood.emoji} ${mood.label}</span>
+                        </div>
+                        <div class="pet-hint">${stage.hint}</div>
+                    </div>
+                </div>
+                <div class="pet-meta">
+                    <div class="pet-stat">
+                        <div class="pet-stat-label">陪伴时长</div>
+                        <div class="pet-stat-value">${days} 天</div>
+                    </div>
+                    <div class="pet-stat">
+                        <div class="pet-stat-label">连续表现</div>
+                        <div class="pet-stat-value">${streak} 天</div>
+                    </div>
+                    <div class="pet-stat">
+                        <div class="pet-stat-label">达成成就</div>
+                        <div class="pet-stat-value">${achievements.length} 个</div>
+                    </div>
+                </div>
+                <div class="pet-progress-track"><div class="pet-progress-bar" style="width:${stage.percent}%;"></div></div>
+                <div class="pet-progress-text">${nextText}</div>
+                <div class="pet-achievements">
+                    ${(achievements.length ? achievements : ['继续加油']).map(text => `<span class="pet-achievement-badge">${text}</span>`).join('')}
+                </div>
+            `;
+        }
+
+        function openPetModal() {
+            renderPetModal();
+            document.getElementById('petModal').classList.add('show');
+        }
+
+        function selectPet(petId) {
+            state.pet = {
+                selectedId: petId,
+                companionSince: state.pet.companionSince || new Date().toISOString()
+            };
+            saveData();
+            renderPetModal();
+            closeModal('petModal');
+            showToast('成长伙伴已更新', 'gain');
+        }
+
         function renderApp() {
             // 每次渲染都校准日期
             updateHeaderDate();
@@ -404,29 +881,15 @@
             document.getElementById('totalScore').textContent = total;
 
             // 2. 今日净增
-            const todayStr = new Date().toISOString().split('T')[0];
-            const todayLogs = state.logs.filter(l => l.dateStr === todayStr);
-            const net = todayLogs.reduce((acc, l) => acc + l.points, 0);
+            const net = getTodayNet();
             document.getElementById('todayNet').textContent = (net > 0 ? '+' : '') + net;
             document.getElementById('todayNet').style.color = net >= 0 ? 'var(--primary)' : 'var(--loss-text)';
 
             // 3. 连续表现 (Streak)
-            let streak = 0;
-            const sortedLogs = [...state.logs].sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
-            const lastLoss = sortedLogs.find(l => l.type === 'loss');
-            
-            if (!lastLoss) {
-                if (state.logs.length > 0) {
-                    const firstLog = sortedLogs[sortedLogs.length-1];
-                    const diff = new Date() - new Date(firstLog.timestamp);
-                    streak = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
-                }
-            } else {
-                const diff = new Date() - new Date(lastLoss.timestamp);
-                streak = Math.floor(diff / (1000 * 60 * 60 * 24));
-            }
+            const streak = getCurrentStreak();
             document.getElementById('daysStreak').innerHTML = `${streak} <span style="font-size: 0.8rem; font-weight:400; color:#cbd5e1;">天</span>`;
 
+            renderPetCard({ total, net, streak });
             renderGrid();
         }
 
