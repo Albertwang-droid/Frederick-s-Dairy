@@ -222,20 +222,23 @@
         .pet-action-btn:active { transform: scale(0.97); }
         .pet-body {
             display: grid;
-            grid-template-columns: 88px 1fr;
-            gap: 0.9rem;
+            grid-template-columns: 104px 1fr;
+            gap: 0.95rem;
             align-items: center;
         }
         .pet-avatar {
-            width: 88px;
-            height: 88px;
-            border-radius: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            background: rgba(255,255,255,0.75);
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
+            width: 104px;
+            height: 104px;
+            border-radius: 1.35rem;
+            overflow: hidden;
+            background: rgba(255,255,255,0.82);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.88), 0 10px 24px rgba(139, 92, 246, 0.12);
+        }
+        .pet-avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .pet-name-row {
             display: flex;
@@ -350,8 +353,19 @@
             box-shadow: 0 10px 20px -14px rgba(168, 85, 247, 0.9);
         }
         .pet-option-icon {
-            font-size: 2.1rem;
-            margin-bottom: 0.35rem;
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 0.45rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: rgba(255,255,255,0.88);
+            box-shadow: inset 0 0 0 1px rgba(236, 228, 255, 0.9);
+        }
+        .pet-option-icon img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .pet-option-name {
             font-size: 0.9rem;
@@ -475,10 +489,70 @@
         const CONFIG = {
             storageKey: 'yibao_html_v3', // 升级版本号以防旧版本数据结构冲突
             petOptions: [
-                { id: 'dragon', name: '小龙', accent: '#2563eb', moodColor: '#dbeafe', icons: ['🥚', '🐲', '🐉', '🐲', '🐲', '👑🐲'], desc: '勇敢守护型伙伴' },
-                { id: 'tiger', name: '萌虎', accent: '#ea580c', moodColor: '#ffedd5', icons: ['🥚', '🐯', '🐅', '🐅', '🐅', '👑🐅'], desc: '元气满满型伙伴' },
-                { id: 'rabbit', name: '小兔', accent: '#db2777', moodColor: '#fce7f3', icons: ['🥚', '🐰', '🐇', '🐇', '🐇', '👑🐇'], desc: '温柔贴心型伙伴' },
-                { id: 'unicorn', name: '独角兽', accent: '#7c3aed', moodColor: '#ede9fe', icons: ['✨', '🦄', '🦄', '🌈🦄', '🌈🦄', '👑🦄'], desc: '梦幻奖励型伙伴' }
+                {
+                    id: 'dragon',
+                    name: '小龙',
+                    accent: '#2563eb',
+                    moodColor: '#dbeafe',
+                    desc: '勇敢守护型伙伴',
+                    previewImage: 'dragon_stage_v2_2_hatchling.png',
+                    stageImages: [
+                        'dragon_stage_v2_1_egg.png',
+                        'dragon_stage_v2_2_hatchling.png',
+                        'dragon_stage_v2_3_young.png',
+                        'dragon_stage_v2_4_growing.png',
+                        'dragon_stage_v2_5_guardian.png',
+                        'dragon_stage_v2_6_divine_beast.png'
+                    ]
+                },
+                {
+                    id: 'tiger',
+                    name: '萌虎',
+                    accent: '#ea580c',
+                    moodColor: '#ffedd5',
+                    desc: '元气满满型伙伴',
+                    previewImage: 'tiger_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'tiger_stage_dragon_ref_1_egg.png',
+                        'tiger_stage_dragon_ref_2_hatchling.png',
+                        'tiger_stage_dragon_ref_3_young.png',
+                        'tiger_stage_dragon_ref_4_growing.png',
+                        'tiger_stage_dragon_ref_5_guardian.png',
+                        'tiger_stage_dragon_ref_6_divine_beast.png'
+                    ]
+                },
+                {
+                    id: 'rabbit',
+                    name: '小兔',
+                    accent: '#db2777',
+                    moodColor: '#fce7f3',
+                    desc: '温柔贴心型伙伴',
+                    previewImage: 'rabbit_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'rabbit_stage_dragon_ref_1_egg.png',
+                        'rabbit_stage_dragon_ref_2_hatchling.png',
+                        'rabbit_stage_dragon_ref_3_young.png',
+                        'rabbit_stage_dragon_ref_4_growing_v2.png',
+                        'rabbit_stage_dragon_ref_5_guardian.png',
+                        'rabbit_stage_dragon_ref_6_divine_beast_v2.png'
+                    ]
+                },
+                {
+                    id: 'unicorn',
+                    name: '独角兽',
+                    accent: '#7c3aed',
+                    moodColor: '#ede9fe',
+                    desc: '梦幻奖励型伙伴',
+                    previewImage: 'unicorn_stage_dragon_ref_2_hatchling.png',
+                    stageImages: [
+                        'unicorn_stage_dragon_ref_1_egg.png',
+                        'unicorn_stage_dragon_ref_2_hatchling.png',
+                        'unicorn_stage_dragon_ref_3_young.png',
+                        'unicorn_stage_dragon_ref_4_growing.png',
+                        'unicorn_stage_dragon_ref_5_guardian.png',
+                        'unicorn_stage_dragon_ref_6_divine_beast.png'
+                    ]
+                }
             ],
             categories: [
                 {
@@ -719,7 +793,7 @@
                 btn.className = `pet-option ${state.pet.selectedId === pet.id ? 'active' : ''}`;
                 btn.onclick = () => selectPet(pet.id);
                 btn.innerHTML = `
-                    <div class="pet-option-icon">${pet.icons[1]}</div>
+                    <div class="pet-option-icon"><img src="${pet.previewImage}" alt="${pet.name}预览图"></div>
                     <div class="pet-option-name">${pet.name}</div>
                     <div class="pet-option-desc">${pet.desc}</div>
                 `;
@@ -750,12 +824,12 @@
             const stage = getPetStage(days);
             const mood = getPetMood(stats.net ?? getTodayNet());
             const achievements = getPetAchievements(total, streak);
-            const icon = pet.icons[Math.min(stage.index, pet.icons.length - 1)] || pet.icons[pet.icons.length - 1];
+            const stageImage = pet.stageImages[Math.min(stage.index, pet.stageImages.length - 1)] || pet.stageImages[pet.stageImages.length - 1];
             const nextText = stage.next ? `距离${stage.next.title}还差 ${Math.max(0, stage.next.min - days)} 天` : '已经达到最高进化阶段';
 
             container.innerHTML = `
                 <div class="pet-body">
-                    <div class="pet-avatar" style="background:${pet.moodColor}; color:${pet.accent};">${icon}</div>
+                    <div class="pet-avatar"><img src="${stageImage}" alt="${pet.name}${stage.title}"></div>
                     <div>
                         <div class="pet-name-row">
                             <span class="pet-name">${pet.name}</span>
